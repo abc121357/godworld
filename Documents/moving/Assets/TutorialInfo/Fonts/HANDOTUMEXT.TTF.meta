@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fb231a7ae0c190c4c8eded6a652c8a0f
+timeCreated: 1508123077
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: HCR Dotum Ext
+  fontNames:
+  - HCR Dotum Ext
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

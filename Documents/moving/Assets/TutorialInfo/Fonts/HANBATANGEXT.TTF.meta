@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 18c79d2d19d1ca74793cc3d06dcdb2ef
+timeCreated: 1508123077
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: HCR Batang Ext
+  fontNames:
+  - HCR Batang Ext
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
