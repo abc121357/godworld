@@ -11,8 +11,8 @@ public class camera : MonoBehaviour {
 
 	void LastUpdate(){
 	
-		cameraposition.x = player.transform.position.x + OffSetX;
-		cameraposition.y = player.transform.position.y + OffSetY;
+		cameraposition.x = player.transform.position.x; // + OffSetX;
+			cameraposition.y = player.transform.position.y; //+ OffSetY;
 		transform.position = cameraposition;
 	
 	}
