@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class play : MonoBehaviour {
 	public Transform pTransform1;
 	public Transform pTransform2;
@@ -37,10 +38,10 @@ public class play : MonoBehaviour {
 
 		Vector3 moveVelocity=Vector3.zero;
 		if (Input.GetAxisRaw ("Horizontal")<0) {
-			moveVelocity = Vector3.right;
+			moveVelocity = Vector3.left;
 			transform.localScale = new Vector3 (-1, 1, 1);
 		} else if (Input.GetAxis ("Horizontal")>0) {
-			moveVelocity = Vector3.left;
+			moveVelocity = Vector3.right;
 			transform.localScale = new Vector3 (1, 1, 1);
 		}
 		transform.position += moveVelocity * speed * Time.deltaTime;
