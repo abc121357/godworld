@@ -44,7 +44,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 1
-  controlID: 104
+  controlID: 113
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 105
+  controlID: 114
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 106
+  controlID: 115
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -420,14 +420,14 @@ MonoBehaviour:
     width: 846
     height: 559
   m_SceneLighting: 1
-  lastFramingTime: 56.22441978218961
+  lastFramingTime: 1327.981010710511
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 52.821507, y: 9.569598, z: -0.2819463}
+    m_Target: {x: 48.915108, y: 8.647934, z: -0.203125}
     speed: 2
-    m_Value: {x: 52.821507, y: 9.569598, z: -0.2819463}
+    m_Value: {x: 48.915108, y: 8.647934, z: -0.203125}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -454,9 +454,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 29.827766
+    m_Target: 22.391987
     speed: 2
-    m_Value: 29.827766
+    m_Value: 22.391987
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -540,9 +540,9 @@ MonoBehaviour:
     height: 926
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c43a0000
-    m_LastClickedID: 15044
-    m_ExpandedIDs: 04f0ffff74f4ffff9cfbffff00000000dc360000
+    m_SelectedIDs: e6640000
+    m_LastClickedID: 25830
+    m_ExpandedIDs: 7460ffff04a3ffff80c8ffffa6fbffff00000000963100006e350000e64e00003c500000485100001e660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,19 +603,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Sprite Pack/Tap and Fly/Sprites/Background
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Sprite Pack/Tap and Fly/Sprites/Background
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\abc12\Documents\GitHub\abc\birdtravel
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 76270000
-    m_LastClickedID: 10102
-    m_ExpandedIDs: 0000000076270000ac270000d6270000fe28000044290000d6290000e4290000483800004a3800004c38000000ca9a3bffffff7f
+    m_SelectedIDs: e8280000
+    m_LastClickedID: 10472
+    m_ExpandedIDs: 0000000074270000aa270000d4270000fc28000042290000d4290000e22900000a3800000c3800000e38000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -643,7 +643,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000076270000ac270000d6270000fe28000044290000d6290000e4290000483800004a3800004c380000
+    m_ExpandedIDs: 0000000074270000aa270000d4270000fc28000042290000d4290000e22900000a3800000c3800000e380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: b82f00008626000090250000d6250000fc2500006c2600006226000000000000363500004e350000b8350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -695,7 +695,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 527}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 110
 --- !u!114 &19
