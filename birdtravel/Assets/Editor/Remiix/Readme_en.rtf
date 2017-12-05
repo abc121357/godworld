@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg949\cocoartf1504\cocoasubrtf820
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww23640\viewh15280\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 How to use \
+\
+When the asset is installed, the Remiix menu will be created under the main Windows menu. \
+\
+	- Select \'93Window\'94 Menu ->\'94 Remiix\'94 -> \'93Obfuscator\'94 \
+\
+		Select obfuscation options and obfuscation will be automatically applied at build time. \
+\
+	- Select \'93Window\'94 Menu -> \'93Remiix\'94 -> \'93Language\'94 \
+\
+		Set a preferred program language. The obfuscation windows and debug logs will be changed to a selected language accordingly. \
+\
+Features \
+\
+	Remiix Obfuscator provides below features. \
+\
+		- Renaming \
+\
+			Renames the project\'92s class, function, field, method, event, property, and parameters. Meta data and reflection that can affect Unity function and execution flow are automatically excluded.\
+\
+		- Fake Method\
+\
+			Insert fake methods within code to make code analysis difficult. \
+\
+		- String Encryption \
+\
+			Encrypt strings within assembly code to protect sensitive information including server communications address and encryption key. \
+\
+Note\
+\
+	- Renaming \
+	\
+		Renaming can affect the program, and some errors can occur during the runtime. It requires exclusion of renaming and/or improvement of the asset to avoid potential errors. \
+\
+	- Fake Method\
+\
+		The file size can increase if a lot of fake methods are inserted within code. This may cause problems if the program\'92s code size is large. \
+\
+	- String Encryption\
+\
+		Please be advised to store any sensitive information on the server as encryption provides basic protection. \
+\
+Exclusions \
+\
+	Following the below instructions, \
+\
+	1. Copy  \'93/Assets/Editor/Remiix/Scripts/SkipAttribute.cs\'94  file to your script directory.\
+\
+	2. Insert the below code at the top of the source code file. \
+\
+		using Remiix.Skip;\
+\
+	3.  Add [Skip\'85] property above a class or method that needs to be excluded. \
+\
+		[SkipFakeMethod]\
+		void Example()\{ ~ \}\
+\
+	At build time, it will be automatically excluded. \
+\
+	Property: \'93SkipRename\'94, \'93SkipFakeMethod\'94, \'93SkipStringEncryption\'94, \'93SkipAll\'94\
+	Reference: Assets/Editor/Remiix/Script/Sample/SkipSample.cs\
+\
+Bug Reports\
+\
+In order to fix bugs, error logs as well as below information is required. \
+\
+	- Asset errors\
+		User OS (e.g. Windows), Build platform (e.g. Android), Unity version (e.g. 2017.1.1f1)\
+	\
+	- Obfuscation build errors\
+\
+		Original program built in Mono (e.g. exe, apk), Applied obfuscation options (e.g. Renaming, Fake Method)\
+\
+	Please report via email with above information, and we\'92ll do our best to improve. \
+\
+Requests \
+\
+	If you have any questions or comments, please email us. \
+\
+Contact: help@seworks.co}
