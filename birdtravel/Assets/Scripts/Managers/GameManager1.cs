@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
  *  게임 진행 GUI 총체 제작
  *  참고 http://gold_metal.blog.me/220888867221?Redirect=Log&from=postView
  */
-public class GameManager : MonoBehaviour {
+public class GameManager1 : MonoBehaviour
+{
     public GameObject player;
     Vector3 startingPosition;
     Quaternion startingRotation;
@@ -52,9 +53,9 @@ public class GameManager : MonoBehaviour {
             GUILayout.BeginVertical();
             GUILayout.FlexibleSpace();
             GUILayout.Label("클리어 ㅊㅋㅊㅋ");
-            if (GUILayout.Button("2단계로!"))
+            if (GUILayout.Button("3단계로!"))
             {
-//                isStarted = true;
+                //                isStarted = true;
                 isCleared = false;
                 SceneManager.LoadScene(1);
             }
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour {
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
         }
-        
+
 
     }
     void StartGame()
@@ -82,14 +83,16 @@ public class GameManager : MonoBehaviour {
         isCleared = true;
     }
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         startingPosition = GameObject.FindGameObjectWithTag(startPointTag).transform.position;
         startingRotation = GameObject.FindGameObjectWithTag(startPointTag).transform.rotation;
         clearPosition = GameObject.FindGameObjectWithTag(clearPointTag).transform.position;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
