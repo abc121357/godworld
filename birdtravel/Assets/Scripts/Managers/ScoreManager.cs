@@ -20,11 +20,11 @@ public class ScoreManager : MonoBehaviour
     }
     private void OnGUI()
     {
-        GUILayout.Label("목숨 " + movement.life + "개");
+
     }
     // Update is called once per frame
     void Update()
     {
-        text.text = "목숨 " + movement.life +  "개";
+        text.text = "x" + movement.life;
     }
 }
