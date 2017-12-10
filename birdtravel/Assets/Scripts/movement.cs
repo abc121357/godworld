@@ -29,7 +29,7 @@ public class movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.position.y < -3) {
+		if (transform.position.y < -4) {
 			if (SavePointTrigger.Plag == true) { // abc : 세이브포인트가 on일시
 				transform.position = new Vector2 (100, 3); // abc : 플래그지점에서 재ㅇ성
 				life -= 1;

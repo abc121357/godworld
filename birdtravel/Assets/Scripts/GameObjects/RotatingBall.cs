@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotatingBall : MonoBehaviour {
-    public float speed = 5f;
+    public float speed = 300f;
     public float pivotOffsetX = 0f;
     public float pivotOffsetY = 0f;
     private Vector3 pivot;
+    public GameObject player;
    // public GameObject Ball;
     // Use this for initialization
+
+        void OnTriggerEnter2D(Collider2D other)
+    {
+        player.transform.position = new Vector2(0, 2.63f); // abc : 공에 닿을시 0,2.63f좌표로 이동후
+        movement.life -= 1; //abc:목숨감소
+    }
+
     void Start () {
         pivot = new Vector3();
         pivot.x = transform.position.x + pivotOffsetX;
