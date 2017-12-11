@@ -8807,8 +8807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   speed: 5
-  endPoint: 0
-  startPoint: 0
+  endPoint: 2
+  startPoint: 6
 --- !u!61 &704650274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26489,8 +26489,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   speed: 5
-  endPoint: 0
-  startPoint: 0
+  endPoint: 1
+  startPoint: 4
 --- !u!61 &1965587331
 BoxCollider2D:
   m_ObjectHideFlags: 0
