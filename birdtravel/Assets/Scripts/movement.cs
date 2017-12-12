@@ -17,6 +17,7 @@ public class movement : MonoBehaviour {
 		animator.SetBool ("isjumping", false);
         if (other.gameObject.tag == "ClearPoint")
         {
+            other.enabled = false;
             GameManager.ClearStage();
         }
     }

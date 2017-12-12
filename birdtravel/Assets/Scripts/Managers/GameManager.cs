@@ -14,16 +14,38 @@ public class GameManager : MonoBehaviour {
     Vector3 clearPosition;
     bool isStarted = false; //세상 : 시작했는지 확인하는 값
     static bool isCleared = false; // 세상 : 끝났는지 확인하는 값
+
+    static int stageLevel = 0;
+
+    public const int clearStageLevel = 2; // 세상: 맨 끝 스테이지
     const string startPointTag = "StartPoint";
     const string clearPointTag = "ClearPoint";
     private void Awake()
     {
-        Time.timeScale = 0f; //세상 : 처음 시작할 시에 움직이지 않는다.
+        if (stageLevel == 0) {
+            Time.timeScale = 0f; //세상 : 처음 시작할 시에 움직이지 않는다.
+
+        }
     }
 
     private void OnGUI()
     {
-        if (!isStarted) //시작하지 않았을 때 설정
+        GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
+        GUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        GUILayout.BeginVertical();
+        GUILayout.FlexibleSpace();
+
+        GUILayout.Label("Stage " + (stageLevel + 1));
+        GUILayout.Space(5);
+
+        GUILayout.EndVertical();
+        GUILayout.FlexibleSpace();
+        GUILayout.EndHorizontal();
+        GUILayout.EndArea();
+
+
+        if (!isStarted && stageLevel == 0) //시작하지 않았을 때 설정
         {
             GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
             GUILayout.BeginHorizontal();
@@ -44,19 +66,19 @@ public class GameManager : MonoBehaviour {
             GUILayout.EndArea();
 
         }
-        else if (isCleared)
+        else if (isCleared  && stageLevel == clearStageLevel)
         {
             GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
             GUILayout.BeginVertical();
             GUILayout.FlexibleSpace();
-            GUILayout.Label("클리어 ㅊㅋㅊㅋ");
-            if (GUILayout.Button("2단계로!"))
+            GUILayout.Label("클리어를 축하드립니다. 다음 데모를 기대해 주세요 :)");
+            if (GUILayout.Button("리플레이하기 ! "))
             {
-//                isStarted = true;
                 isCleared = false;
-                SceneManager.LoadScene(1);
+                stageLevel = 0;
+                SceneManager.LoadScene(0, LoadSceneMode.Single);
             }
 
             GUILayout.FlexibleSpace();
@@ -78,8 +100,18 @@ public class GameManager : MonoBehaviour {
     }
     public static void ClearStage()
     {
-        Time.timeScale = 0f;
-        isCleared = true;
+       //
+        stageLevel++;
+        
+        if (stageLevel == clearStageLevel) //클리어 성공
+        {
+            Time.timeScale = 0f;
+
+            isCleared = true;
+        }else
+        {
+            SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
+        }
     }
     // Use this for initialization
     void Start () {
