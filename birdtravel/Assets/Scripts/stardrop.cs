@@ -6,19 +6,17 @@ public class stardrop : MonoBehaviour
 {
 
     public GameObject player;
-    static public bool trigger = false;
+    bool trigger = false;
     float a = 1;
     int speed = 10;
-    
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter(Collider2D other)
     {
-       
-            player.transform.position = new Vector2(0, 2.63f);
         trigger = false;
-        movement.life -= 1;
-       
+
     }
 
+
+  
 
     // Use this for initialization
     void Start()
@@ -29,12 +27,10 @@ public class stardrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
         if (player.transform.position.x +0.5f > transform.position.x)
         {
             trigger = true;
         }
-
         if (trigger == true)
         {
             if (transform.position.y > 7)
@@ -48,6 +44,12 @@ public class stardrop : MonoBehaviour
 
             transform.Translate(Vector2.down * speed * Time.deltaTime*a);
 
+        }
+
+        if(movement.reset==true)
+        {
+            transform.position = new Vector2(transform.localPosition.x, 8);
+            movement.reset = false;
         }
     }
 }

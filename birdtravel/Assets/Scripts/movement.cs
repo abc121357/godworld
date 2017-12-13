@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour {
 
+    static public bool reset = false; // 게임 오브젝트 리셋
     static public float life = 3;
 	public GameObject bird;
 	public float movepower = 1.0f;
@@ -14,6 +15,22 @@ public class movement : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+        if(other.gameObject.tag=="Enemy") // 게임태그가 적이면
+        {
+            if (SavePointTrigger.Plag == true)
+            {
+                transform.position = new Vector2(100, 2.63f);
+            }
+
+            else
+            {
+                transform.position = new Vector2(0, 2.63f);
+            }
+            life -= 1;
+            reset = true;
+
+
+        }
 		animator.SetBool ("isjumping", false);
         if (other.gameObject.tag == "ClearPoint")
         {
@@ -38,7 +55,7 @@ public class movement : MonoBehaviour {
 			}
 			transform.position = new Vector2 (0, 3);
             life -= 1;
-            stardrop.trigger = false;
+            reset = true;
 
 		}
 		if (Input.GetAxisRaw ("Horizontal") < 0) {

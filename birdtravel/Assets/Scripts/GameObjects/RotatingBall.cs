@@ -10,12 +10,7 @@ public class RotatingBall : MonoBehaviour {
     public GameObject player;
    // public GameObject Ball;
     // Use this for initialization
-
-        void OnTriggerEnter2D(Collider2D other)
-    {
-        player.transform.position = new Vector2(0, 2.63f); // abc : 공에 닿을시 0,2.63f좌표로 이동후
-        movement.life -= 1; //abc:목숨감소
-    }
+    
 
     void Start () {
         pivot = new Vector3();

@@ -1,43 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// abc 코딩
-public class MovingStar : MonoBehaviour {
-    public int Min=0; // x좌표 이동최소구간
-    public int Max=0; // x좌표 이동최대구간
-    GameObject player;
-    public int Speed = 5;
 
-    void OnTrrigerEnter2D(Collider2D other)
+
+public class MovingStar : MonoBehaviour
+{
+    private Vector2 direction = Vector2.left;
+    public float speed = 5;
+    // Use this for initialization
+
+    public float endPoint; // = 4.85f;
+    public float startPoint; // -0.85f
+
+    private float minPoint; //최소값
+    private float maxPoint; // 최대값
+    void Start()
     {
-        player.transform.position = new Vector2(100, 2.63f);
-        movement.life -= 1; //이건 말안해도 알겠죠
+        if (endPoint > startPoint)
+        {
+            maxPoint = endPoint;
+            minPoint = startPoint;
+        }
+        else
+        {
+            minPoint = endPoint;
+            maxPoint = startPoint;
+        }
+
     }
 
-    void OnTrrigerStay2D(Collider2D other)
+    // Update is called once per frame
+    void Update()
     {
-        Speed = Speed * 2;
+
+        if (transform.localPosition.x < minPoint)
+        {
+
+
+
+            direction = Vector2.right;
+        }
+        else if (transform.localPosition.x > maxPoint)
+        {
+
+            direction = Vector2.left;
+        }
+        transform.Translate(speed * Time.deltaTime * direction);
+
+
+
     }
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (Min >= transform.position.x)
-        {
-            if(Min >= transform.position.x||Max > transform.position.x)
-
-                transform.Translate(Vector2.right * Speed * Time.deltaTime); // MIn에도달시 +x좌표이동
-          
-        }
-        else if (Max <= transform.position.x)
-        {
-           if(Max <= transform.position.x || Min < transform.position.x)
-                transform.Translate(Vector2.left * Speed * Time.deltaTime); // Max에도달시 -x좌표이동
-           
-        }
-	}
 }
