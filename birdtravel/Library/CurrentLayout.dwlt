@@ -204,8 +204,8 @@ MonoBehaviour:
     y: 473
     width: 810
     height: 474
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -229,8 +229,8 @@ MonoBehaviour:
     y: 0
     width: 233
     height: 947
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -447,14 +447,14 @@ MonoBehaviour:
     width: 808
     height: 452
   m_SceneLighting: 1
-  lastFramingTime: 20354.16416442015
+  lastFramingTime: 149.34069850916157
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 206.70097, y: 11.082144, z: 3.9960938}
+    m_Target: {x: 203.43015, y: 18.972586, z: 0.718234}
     speed: 2
-    m_Value: {x: 206.70097, y: 11.082144, z: 3.9960938}
+    m_Value: {x: 203.43015, y: 18.972586, z: 0.718234}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -481,9 +481,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.667987
+    m_Target: 14.92512
     speed: 2
-    m_Value: 10.667987
+    m_Value: 14.92512
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -567,20 +567,20 @@ MonoBehaviour:
     height: 926
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c1be7ff
-    m_LastClickedID: -1631476
-    m_ExpandedIDs: bed2e7ff183ae9ff48a6e9ff2adae9ffdadae9ffeedbe9ff3ee3e9ffeee3e9ff10e9e9ffbee9e9ff86ece9ff8aece9ffeaf9e9ff8607eaff3408eaff6e09eaffc609eaff240ef3ff4e93f3ff3ab4f3ff38fbffffa6fbffff00000000a02b0000182f00003e30000060310000a6310000d8860200ba9602006e9b0200229e02003eb30500deb8050006cb0500f6180600d82d0600b64d06004c4e0600664e0600c0510600686d0600cc6f0600d26f06008c720600
+    m_SelectedIDs: 24610000
+    m_LastClickedID: 24868
+    m_ExpandedIDs: 9c9dffff469effff849fffffe09fffffb8caffff7afaffffa6fbffff00000000682e00007830000020320000565b0000505f00009c600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: NextStageSky
-      m_OriginalName: NextStageSky
+      m_Name: StarDrop
+      m_OriginalName: StarDrop
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 421842
+      m_UserData: 23924
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -630,19 +630,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefep
+    - Assets/Sprite Pack/Tap and Fly/Sprites/Background
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefep
+  - Assets/Sprite Pack/Tap and Fly/Sprites/Background
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\abc12\Documents\GitHub\abc\birdtravel
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0270000
-    m_LastClickedID: 10192
-    m_ExpandedIDs: 000000006e270000f22800003e290000862900002c2a0000123600001436000000ca9a3bffffff7f
+    m_SelectedIDs: fe280000
+    m_LastClickedID: 10494
+    m_ExpandedIDs: 000000006e270000f8280000442900008c290000362a0000b2360000b436000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -670,7 +670,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006e270000f22800003e290000862900002c2a00001236000014360000
+    m_ExpandedIDs: 000000006e270000f8280000442900008c290000362a0000b2360000b4360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -697,8 +697,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: b82f00008626000090250000d6250000fc2500006c26000062260000363500004e350000b8350000580700005a070000242a0000a02800006a280000382900008a2a0000762a000090270000bc2800000a2800004c010000dc27000000000000
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: b82f00008626000090250000d6250000fc2500006c26000062260000363500004e350000b8350000580700005a070000242a0000a02800006a280000382900008a2a0000762a000090270000bc2800000a2800004c010000dc27000000000000d8280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -722,7 +722,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 155}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 278
 --- !u!114 &20

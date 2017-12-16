@@ -102,7 +102,10 @@ public class GameManager : MonoBehaviour {
     {
        //
         stageLevel++;
-        
+        if (SavePointTrigger.Plag == true)
+        {
+            SavePointTrigger.Plag = false;
+        }
         if (stageLevel == clearStageLevel) //클리어 성공
         {
             Time.timeScale = 0f;
