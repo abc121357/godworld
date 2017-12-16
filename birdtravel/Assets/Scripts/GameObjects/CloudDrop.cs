@@ -5,7 +5,7 @@ using UnityEngine;
 public class CloudDrop : MonoBehaviour
 {
 //	Vector3 playerPosition;
-	public GameObject player;
+	//public GameObject player;
 	public int speed = 10;
     private bool isDroping = false;
     public float triggerOffset = 1f;
@@ -26,17 +26,24 @@ public class CloudDrop : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-     	if (isDroping) {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null) {
+            if (isDroping)
+            {
 
-			transform.Translate(Vector2.down * speed * Time.deltaTime);
+                transform.Translate(Vector2.down * speed * Time.deltaTime);
 
-		}else if ((player.transform.position.x - transform.position.x <= triggerOffset)&&
-            (transform.position.x  - player.transform.position.x  <= triggerOffset )){
-            isDroping = true;
+            }
+            else if ((player.transform.position.x - transform.position.x <= triggerOffset) &&
+               (transform.position.x - player.transform.position.x <= triggerOffset))
+            {
+                isDroping = true;
+            }
+
         }
-	
 
 
 
-	}
+
+    }
 }

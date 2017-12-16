@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150488125360678}
   - component: {fileID: 212394139508698006}
+  - component: {fileID: 114565747101286726}
   m_Layer: 0
   m_Name: trap cloud
   m_TagString: Untagged
@@ -40,6 +41,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114565747101286726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435361474183510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a2563c8d9ae054ebafde7619bde8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1754133919695472, guid: 149181a6e5d79834e8c8a37493787897, type: 2}
+  speed: 10
+  triggerOffset: 1
 --- !u!212 &212394139508698006
 SpriteRenderer:
   m_ObjectHideFlags: 1

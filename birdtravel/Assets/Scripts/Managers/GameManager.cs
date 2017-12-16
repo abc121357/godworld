@@ -9,12 +9,12 @@ using UnityEngine.SceneManagement;
  */
 public class GameManager : MonoBehaviour {
     public GameObject player;
-    Vector3 startingPosition;
-    Quaternion startingRotation;
+    static Vector3 startingPosition;
+    static Quaternion startingRotation;
 
-    Vector3 savedPosition;
-    Quaternion savedRotation;
-    Vector3 clearPosition;
+    static Vector3 savedPosition;
+    static Quaternion savedRotation;
+    static Vector3 clearPosition;
 
     public static bool isStarted = false; //세상 : 시작했는지 확인하는 값
     public static bool isCleared = false; // 세상 : 끝났는지 확인하는 값
@@ -29,6 +29,12 @@ public class GameManager : MonoBehaviour {
     const string mainCameraTag = "MainCamera";
     private void Awake()
     {
+        startingPosition = GameObject.FindGameObjectWithTag(startPointTag).transform.position;
+        startingRotation = GameObject.FindGameObjectWithTag(startPointTag).transform.rotation;
+        clearPosition = GameObject.FindGameObjectWithTag(clearPointTag).transform.position;
+        savedPosition = GameObject.FindGameObjectWithTag(savedPointTag).transform.position;
+        savedRotation = GameObject.FindGameObjectWithTag(savedPointTag).transform.rotation;
+
         Time.timeScale = 0f;
         if (isStarted)
         {
@@ -148,15 +154,7 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
     }
     // Use this for initialization
-    void Start () {
-        startingPosition = GameObject.FindGameObjectWithTag(startPointTag).transform.position;
-        startingRotation = GameObject.FindGameObjectWithTag(startPointTag).transform.rotation;
-        clearPosition = GameObject.FindGameObjectWithTag(clearPointTag).transform.position;
-        savedPosition = GameObject.FindGameObjectWithTag(savedPointTag).transform.position;
-        savedRotation = GameObject.FindGameObjectWithTag(savedPointTag).transform.rotation;
-        
-        
-    }
+  
 	
 	// Update is called once per frame
 	void Update () {
