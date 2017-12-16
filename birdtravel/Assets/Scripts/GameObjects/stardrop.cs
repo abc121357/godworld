@@ -9,7 +9,7 @@ public class stardrop : MonoBehaviour
     bool trigger = false;
     float a = 1;
     int speed = 10;
-    void OnTriggerEnter(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         trigger = false;
 

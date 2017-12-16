@@ -3280,7 +3280,7 @@ Note: Every time you call the method with tolerance specified, a new instance of
     </member>
     <member name="P:UnityEngine.Bounds.extents">
       <summary>
-        <para>The extents of the box. This is always half of the size.</para>
+        <para>The extents of the Bounding Box. This is always half of the size of the Bounds.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Bounds.max">
@@ -5087,20 +5087,20 @@ The default value is Camera.MonoOrStereoscopicEye.Left, so Camera.MonoOrStereosc
         <para>Returns all components of Type type in the GameObject or any of its children.</para>
       </summary>
       <param name="t">The type of Component to retrieve.</param>
-      <param name="includeInactive">Should Components on inactive GameObjects be included in the found set?</param>
+      <param name="includeInactive">Should Components on inactive GameObjects be included in the found set? includeInactive decides which children of the GameObject will be searched.  The GameObject that you call GetComponentsInChildren on is always searched regardless.</param>
     </member>
     <member name="M:UnityEngine.Component.GetComponentsInChildren(System.Type,System.Boolean)">
       <summary>
         <para>Returns all components of Type type in the GameObject or any of its children.</para>
       </summary>
       <param name="t">The type of Component to retrieve.</param>
-      <param name="includeInactive">Should Components on inactive GameObjects be included in the found set?</param>
+      <param name="includeInactive">Should Components on inactive GameObjects be included in the found set? includeInactive decides which children of the GameObject will be searched.  The GameObject that you call GetComponentsInChildren on is always searched regardless.</param>
     </member>
     <member name="M:UnityEngine.Component.GetComponentsInChildren(System.Boolean)">
       <summary>
         <para>Generic version. See the page for more details.</para>
       </summary>
-      <param name="includeInactive">Should Components on inactive GameObjects be included in the found set?</param>
+      <param name="includeInactive">Should Components on inactive GameObjects be included in the found set? includeInactive decides which children of the GameObject will be searched.  The GameObject that you call GetComponentsInChildren on is always searched regardless.</param>
       <returns>
         <para>A list of all found components matching the specified type.</para>
       </returns>
@@ -6824,11 +6824,10 @@ Windows Store Apps: tablets are treated as desktop machines, thus DeviceType.Han
       <param name="rectTransform">The RectTransform to be driven.</param>
       <param name="drivenProperties">The properties to be driven.</param>
     </member>
-    <member name="M:UnityEngine.DrivenRectTransformTracker.Clear()">
+    <member name="M:UnityEngine.DrivenRectTransformTracker.Clear">
       <summary>
         <para>Clear the list of RectTransforms being driven.</para>
       </summary>
-      <param name="revertValues"></param>
     </member>
     <member name="T:UnityEngine.DrivenTransformProperties">
       <summary>
@@ -12661,37 +12660,37 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="F:UnityEngine.KeyCode.Mouse0">
       <summary>
-        <para>First (primary) mouse button.</para>
+        <para>The Left (or primary) mouse button.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.KeyCode.Mouse1">
       <summary>
-        <para>Second (secondary) mouse button.</para>
+        <para>Right mouse button (or secondary mouse button).</para>
       </summary>
     </member>
     <member name="F:UnityEngine.KeyCode.Mouse2">
       <summary>
-        <para>Third mouse button.</para>
+        <para>Middle mouse button (or third button).</para>
       </summary>
     </member>
     <member name="F:UnityEngine.KeyCode.Mouse3">
       <summary>
-        <para>Fourth mouse button.</para>
+        <para>Additional (fourth) mouse button.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.KeyCode.Mouse4">
       <summary>
-        <para>Fifth mouse button.</para>
+        <para>Additional (fifth) mouse button.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.KeyCode.Mouse5">
       <summary>
-        <para>Sixth mouse button.</para>
+        <para>Additional (or sixth) mouse button.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.KeyCode.Mouse6">
       <summary>
-        <para>Seventh mouse button.</para>
+        <para>Additional (or seventh) mouse button.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.KeyCode.N">
@@ -17822,17 +17821,22 @@ The Player ID is always 1, because only one Editor can be connected.</param>
     </member>
     <member name="F:UnityEngine.Playables.DataStreamType.Animation">
       <summary>
-        <para>Describes that the information flowing in and out of the Playable is of type Animation.</para>
+        <para>Describes that the information flowing in and out of the Playable is of Animation type.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Playables.DataStreamType.Audio">
       <summary>
-        <para>Describes that the information flowing in and out of the Playable is Audio.</para>
+        <para>Describes that the information flowing in and out of the Playable is of Audio type.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Playables.DataStreamType.None">
       <summary>
         <para>Describes that the Playable does not have any particular type. This is use for Playables that execute script code, or that create their own playable graphs, such as the Sequence.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Playables.DataStreamType.Video">
+      <summary>
+        <para>Describes that the information flowing in and out of the Playable is of Video type.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.Playables.DirectorUpdateMode">
@@ -17962,7 +17966,7 @@ The Player ID is always 1, because only one Editor can be connected.</param>
     </member>
     <member name="T:UnityEngine.Playables.Playable">
       <summary>
-        <para>Playables are customizable runtime objects that can be connected together in a tree contained in a PlayableGraph to create complex behaviours.</para>
+        <para>Playables are customizable runtime objects that can be connected together and are contained in a PlayableGraph to create complex behaviours.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Playables.Playable.Null">
@@ -18045,7 +18049,7 @@ The Player ID is always 1, because only one Editor can be connected.</param>
       <param name="playable">The Playable that owns the current PlayableBehaviour.</param>
       <param name="info">A FrameData structure that contains information about the current frame context.</param>
     </member>
-    <member name="M:UnityEngine.Playables.PlayableBehaviour.ProcessFrame">
+    <member name="M:UnityEngine.Playables.PlayableBehaviour.ProcessFrame(UnityEngine.Playables.Playable,UnityEngine.Playables.FrameData,System.Object)">
       <summary>
         <para>This function is called during the ProcessFrame phase of the PlayableGraph.</para>
       </summary>
@@ -18105,7 +18109,7 @@ The Player ID is always 1, because only one Editor can be connected.</param>
         <para>The index of the newly created input port.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.Playables.PlayableExtensions.ConnectInput(U,System.Int32,V,System.Int32)">
+    <member name="M:UnityEngine.Playables.PlayableExtensions.ConnectInput(U,System.Int32,V,System.Int32,System.Single)">
       <summary>
         <para>Connect the output port of a Playable to one of the input ports.</para>
       </summary>
@@ -18113,6 +18117,7 @@ The Player ID is always 1, because only one Editor can be connected.</param>
       <param name="inputIndex">The input port index.</param>
       <param name="sourcePlayable">The Playable to connect to.</param>
       <param name="sourceOutputIndex">The output port of the Playable.</param>
+      <param name="weight">The weight of the input port.</param>
     </member>
     <member name="M:UnityEngine.Playables.PlayableExtensions.Destroy(U)">
       <summary>
@@ -18316,10 +18321,10 @@ The Player ID is always 1, because only one Editor can be connected.</param>
     </member>
     <member name="T:UnityEngine.Playables.PlayableGraph">
       <summary>
-        <para>The PlayableGraph is used to manage Playable creation, destruction and connections.</para>
+        <para>Use the PlayableGraph to manage Playable creations and destructions.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.Playables.PlayableGraph.Connect">
+    <member name="M:UnityEngine.Playables.PlayableGraph.Connect(U,System.Int32,V,System.Int32)">
       <summary>
         <para>Connects two Playable instances.</para>
       </summary>
@@ -18335,6 +18340,9 @@ The Player ID is always 1, because only one Editor can be connected.</param>
       <summary>
         <para>Creates a PlayableGraph.</para>
       </summary>
+      <returns>
+        <para>The newly created PlayableGraph.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Playables.PlayableGraph.Destroy">
       <summary>
@@ -18347,26 +18355,32 @@ The Player ID is always 1, because only one Editor can be connected.</param>
       </summary>
       <param name="output">The output to destroy.</param>
     </member>
-    <member name="M:UnityEngine.Playables.PlayableGraph.DestroyPlayable">
+    <member name="M:UnityEngine.Playables.PlayableGraph.DestroyPlayable(U)">
       <summary>
         <para>Destroys the Playable.</para>
       </summary>
       <param name="playable">The playable to destroy.</param>
     </member>
-    <member name="M:UnityEngine.Playables.PlayableGraph.DestroySubgraph">
+    <member name="M:UnityEngine.Playables.PlayableGraph.DestroySubgraph(U)">
       <summary>
-        <para>Recursively destroys the given Playable and all children connected to its inputs.</para>
+        <para>Destroys the Playable and all its inputs, recursively.</para>
       </summary>
-      <param name="playable">The playable to destroy.</param>
+      <param name="playable">The Playable to destroy.</param>
     </member>
-    <member name="M:UnityEngine.Playables.PlayableGraph.Disconnect">
+    <member name="M:UnityEngine.Playables.PlayableGraph.Disconnect(U,System.Int32)">
       <summary>
-        <para>Disconnects Playable.  The connections determine the topology of the PlayableGraph and how its is evaluated.</para>
+        <para>Disconnects the Playable. The connections determine the topology of the PlayableGraph and how it is evaluated.</para>
       </summary>
-      <param name="playable">The source playabe or its handle.</param>
+      <param name="input">The source playabe or its handle.</param>
       <param name="inputPort">The port used in the source playable.</param>
     </member>
     <member name="M:UnityEngine.Playables.PlayableGraph.Evaluate(System.Single)">
+      <summary>
+        <para>Evaluates all the PlayableOutputs in the graph, and updates all the connected Playables in the graph.</para>
+      </summary>
+      <param name="deltaTime">The time in seconds by which to advance each Playable in the graph.</param>
+    </member>
+    <member name="M:UnityEngine.Playables.PlayableGraph.Evaluate()">
       <summary>
         <para>Evaluates all the PlayableOutputs in the graph, and updates all the connected Playables in the graph.</para>
       </summary>
@@ -18376,23 +18390,35 @@ The Player ID is always 1, because only one Editor can be connected.</param>
       <summary>
         <para>Get PlayableOutput at the given index in the graph.</para>
       </summary>
-      <param name="index"></param>
+      <param name="index">The output index.</param>
+      <returns>
+        <para>The PlayableOutput at this given index, otherwise null.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Playables.PlayableGraph.GetOutputByType(System.Int32)">
       <summary>
         <para>Get PlayableOutput of the requested type at the given index in the graph.</para>
       </summary>
-      <param name="index"></param>
+      <param name="index">The output index.</param>
+      <returns>
+        <para>The PlayableOutput at the given index among all the PlayableOutput of the same type T.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Playables.PlayableGraph.GetOutputCount">
       <summary>
-        <para>Get the number of PlayableOutput in the graph.</para>
+        <para>Returns the number of PlayableOutput in the graph.</para>
       </summary>
+      <returns>
+        <para>The number of PlayableOutput in the graph.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Playables.PlayableGraph.GetOutputCountByType">
       <summary>
         <para>Get the number of PlayableOutput of the requested type in the graph.</para>
       </summary>
+      <returns>
+        <para>The number of PlayableOutput of the same type T in the graph.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Playables.PlayableGraph.GetPlayableCount">
       <summary>
@@ -18459,7 +18485,7 @@ The Player ID is always 1, because only one Editor can be connected.</param>
       <summary>
         <para>Changes how time is incremented when playing back.</para>
       </summary>
-      <param name="value"></param>
+      <param name="value">The new DirectorUpdateMode.</param>
     </member>
     <member name="M:UnityEngine.Playables.PlayableGraph.Stop">
       <summary>
@@ -18496,11 +18522,11 @@ The Player ID is always 1, because only one Editor can be connected.</param>
         <para>A IPlayableOutput implementation that contains a script output for the a PlayableGraph.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.Playables.ScriptPlayableOutput.Create">
+    <member name="M:UnityEngine.Playables.ScriptPlayableOutput.Create(UnityEngine.Playables.PlayableGraph,System.String)">
       <summary>
         <para>Creates a new ScriptPlayableOutput in the associated PlayableGraph.</para>
       </summary>
-      <param name="graph">The PlayableGraph that will own this ScriptPlayableOutput.</param>
+      <param name="graph">The PlayableGraph that will contain the ScriptPlayableOutput.</param>
       <param name="name">The name of this ScriptPlayableOutput.</param>
       <returns>
         <para>The created ScriptPlayableOutput.</para>
@@ -19688,8 +19714,7 @@ frame. Minimum value is 1 and maximum is 33.</para>
     </member>
     <member name="P:UnityEngine.QualitySettings.resolutionScalingFixedDPIFactor">
       <summary>
-        <para>In resolution scaling mode, this factor is used to multiply with the target Fixed DPI specified to get the actual Fixed DPI to use for this quality setting.
-        </para>
+        <para>In resolution scaling mode, this factor is used to multiply with the target Fixed DPI specified to get the actual Fixed DPI to use for this quality setting.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.QualitySettings.shadowCascade2Split">
@@ -24937,7 +24962,7 @@ See RenderTexture.useMipMap.</para>
     </member>
     <member name="F:UnityEngine.RuntimePlatform.WebGLPlayer">
       <summary>
-        <para>In the player on WebGL?</para>
+        <para>In the player on WebGL</para>
       </summary>
     </member>
     <member name="F:UnityEngine.RuntimePlatform.WiiU">
@@ -25074,52 +25099,52 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
     </member>
     <member name="?:UnityEngine.SceneManagement.SceneManager.activeSceneChanged(UnityEngine.Events.UnityAction`2&lt;UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene&gt;)">
       <summary>
-        <para>Add a delegate to this to get notifications when the active scene has changed</para>
+        <para>Add a delegate to this to get notifications when the active Scene has changed</para>
       </summary>
       <param name="value"></param>
     </member>
     <member name="P:UnityEngine.SceneManagement.SceneManager.sceneCount">
       <summary>
-        <para>The total number of currently loaded scenes.</para>
+        <para>The total number of currently loaded Scenes.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings">
       <summary>
-        <para>Number of scenes in Build Settings.</para>
+        <para>Number of Scenes in Build Settings.</para>
       </summary>
     </member>
     <member name="?:UnityEngine.SceneManagement.SceneManager.sceneLoaded(UnityEngine.Events.UnityAction`2&lt;UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode&gt;)">
       <summary>
-        <para>Add a delegate to this to get notifications when a scene has loaded.</para>
+        <para>Add a delegate to this to get notifications when a Scene has loaded.</para>
       </summary>
       <param name="value"></param>
     </member>
     <member name="?:UnityEngine.SceneManagement.SceneManager.sceneUnloaded(UnityEngine.Events.UnityAction`1&lt;UnityEngine.SceneManagement.Scene&gt;)">
       <summary>
-        <para>Add a delegate to this to get notifications when a scene has unloaded</para>
+        <para>Add a delegate to this to get notifications when a Scene has unloaded</para>
       </summary>
       <param name="value"></param>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.CreateScene(System.String)">
       <summary>
-        <para>Create an empty new scene at runtime with the given name.</para>
+        <para>Create an empty new Scene at runtime with the given name.</para>
       </summary>
-      <param name="sceneName">The name of the new scene. It cannot be empty or null, or same as the name of the existing scenes.</param>
+      <param name="sceneName">The name of the new Scene. It cannot be empty or null, or same as the name of the existing Scenes.</param>
       <returns>
-        <para>A reference to the new scene that was created, or an invalid scene if creation failed.</para>
+        <para>A reference to the new Scene that was created, or an invalid Scene if creation failed.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.GetActiveScene">
       <summary>
-        <para>Gets the currently active scene.</para>
+        <para>Gets the currently active Scene.</para>
       </summary>
       <returns>
-        <para>The active scene.</para>
+        <para>The active Scene.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.GetAllScenes">
       <summary>
-        <para>Returns an array of all the scenes currently open in the hierarchy.</para>
+        <para>Returns an array of all the Scenes currently open in the hierarchy.</para>
       </summary>
       <returns>
         <para>Array of Scenes in the Hierarchy.</para>
@@ -25127,142 +25152,142 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.GetSceneAt(System.Int32)">
       <summary>
-        <para>Get the scene at index in the SceneManager's list of added scenes.</para>
+        <para>Get the Scene at index in the SceneManager's list of loaded Scenes.</para>
       </summary>
-      <param name="index">Index of the scene to get. Index must be greater than or equal to 0 and less than SceneManager.sceneCount.</param>
+      <param name="index">Index of the Scene to get. Index must be greater than or equal to 0 and less than SceneManager.sceneCount.</param>
       <returns>
-        <para>A reference to the scene at the index specified.</para>
+        <para>A reference to the Scene at the index specified.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.GetSceneByBuildIndex(System.Int32)">
       <summary>
-        <para>Get a scene struct from a build index.</para>
+        <para>Get a Scene struct from a build index.</para>
       </summary>
       <param name="buildIndex">Build index as shown in the Build Settings window.</param>
       <returns>
-        <para>A reference to the scene, if valid. If not, an invalid scene is returned.</para>
+        <para>A reference to the Scene, if valid. If not, an invalid Scene is returned.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.GetSceneByName(System.String)">
       <summary>
-        <para>Searches through the scenes added to the SceneManager for a scene with the given name.</para>
+        <para>Searches through the Scenes added to the SceneManager for a Scene with the given name.</para>
       </summary>
-      <param name="name">Name of scene to find.</param>
+      <param name="name">Name of Scene to find.</param>
       <returns>
-        <para>A reference to the scene, if valid. If not, an invalid scene is returned.</para>
+        <para>A reference to the Scene, if valid. If not, an invalid Scene is returned.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.GetSceneByPath(System.String)">
       <summary>
-        <para>Searches all scenes added to the SceneManager for a scene that has the given asset path.</para>
+        <para>Searches all Scenes added to the SceneManager for a Scene that has the given asset path.</para>
       </summary>
-      <param name="scenePath">Path of the scene. Should be relative to the project folder. Like: "AssetsMyScenesMyScene.unity".</param>
+      <param name="scenePath">Path of the Scene. Should be relative to the project folder. Like: "AssetsMyScenesMyScene.unity".</param>
       <returns>
-        <para>A reference to the scene, if valid. If not, an invalid scene is returned.</para>
+        <para>A reference to the Scene, if valid. If not, an invalid Scene is returned.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.LoadScene(System.Int32,UnityEngine.SceneManagement.LoadSceneMode)">
       <summary>
-        <para>Loads the scene by its name or index in Build Settings.</para>
+        <para>Loads the Scene by its name or index in Build Settings.</para>
       </summary>
-      <param name="sceneName">Name or path of the scene to load.</param>
-      <param name="sceneBuildIndex">Index of the scene in the Build Settings to load.</param>
-      <param name="mode">Allows you to specify whether or not to load the scene additively.
+      <param name="sceneName">Name or path of the Scene to load.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
+      <param name="mode">Allows you to specify whether or not to load the Scene additively.
         See SceneManagement.LoadSceneMode for more information about the options.</param>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.LoadScene(System.String,UnityEngine.SceneManagement.LoadSceneMode)">
       <summary>
-        <para>Loads the scene by its name or index in Build Settings.</para>
+        <para>Loads the Scene by its name or index in Build Settings.</para>
       </summary>
-      <param name="sceneName">Name or path of the scene to load.</param>
-      <param name="sceneBuildIndex">Index of the scene in the Build Settings to load.</param>
-      <param name="mode">Allows you to specify whether or not to load the scene additively.
+      <param name="sceneName">Name or path of the Scene to load.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
+      <param name="mode">Allows you to specify whether or not to load the Scene additively.
         See SceneManagement.LoadSceneMode for more information about the options.</param>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(System.String,UnityEngine.SceneManagement.LoadSceneMode)">
       <summary>
-        <para>Loads the scene asynchronously in the background.</para>
+        <para>Loads the Scene asynchronously in the background.</para>
       </summary>
-      <param name="sceneName">Name or path of the scene to load.</param>
-      <param name="sceneBuildIndex">Index of the scene in the Build Settings to load.</param>
-      <param name="mode">If LoadSceneMode.Single then all current scenes will be unloaded before loading.</param>
+      <param name="sceneName">Name or path of the Scene to load.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
+      <param name="mode">If LoadSceneMode.Single then all current Scenes will be unloaded before loading.</param>
       <returns>
         <para>Use the AsyncOperation to determine if the operation has completed.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(System.Int32,UnityEngine.SceneManagement.LoadSceneMode)">
       <summary>
-        <para>Loads the scene asynchronously in the background.</para>
+        <para>Loads the Scene asynchronously in the background.</para>
       </summary>
-      <param name="sceneName">Name or path of the scene to load.</param>
-      <param name="sceneBuildIndex">Index of the scene in the Build Settings to load.</param>
-      <param name="mode">If LoadSceneMode.Single then all current scenes will be unloaded before loading.</param>
+      <param name="sceneName">Name or path of the Scene to load.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
+      <param name="mode">If LoadSceneMode.Single then all current Scenes will be unloaded before loading.</param>
       <returns>
         <para>Use the AsyncOperation to determine if the operation has completed.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.MergeScenes(UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)">
       <summary>
-        <para>This will merge the source scene into the destinationScene.</para>
+        <para>This will merge the source Scene into the destinationScene.</para>
       </summary>
-      <param name="sourceScene">The scene that will be merged into the destination scene.</param>
-      <param name="destinationScene">Existing scene to merge the source scene into.</param>
+      <param name="sourceScene">The Scene that will be merged into the destination Scene.</param>
+      <param name="destinationScene">Existing Scene to merge the source Scene into.</param>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(UnityEngine.GameObject,UnityEngine.SceneManagement.Scene)">
       <summary>
-        <para>Move a GameObject from its current scene to a new Scene.</para>
+        <para>Move a GameObject from its current Scene to a new Scene.</para>
       </summary>
       <param name="go">GameObject to move.</param>
       <param name="scene">Scene to move into.</param>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.Scene)">
       <summary>
-        <para>Set the scene to be active.</para>
+        <para>Set the Scene to be active.</para>
       </summary>
-      <param name="scene">The scene to be set.</param>
+      <param name="scene">The Scene to be set.</param>
       <returns>
-        <para>Returns false if the scene is not loaded yet.</para>
+        <para>Returns false if the Scene is not loaded yet.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadScene(System.Int32)">
       <summary>
-        <para>Destroys all GameObjects associated with the given scene and removes the scene from the SceneManager.</para>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
       </summary>
-      <param name="sceneBuildIndex">Index of the scene in the Build Settings to unload.</param>
-      <param name="sceneName">Name or path of the scene to unload.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to unload.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
       <param name="scene">Scene to unload.</param>
       <returns>
-        <para>Returns true if the scene is unloaded.</para>
+        <para>Returns true if the Scene is unloaded.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadScene(System.String)">
       <summary>
-        <para>Destroys all GameObjects associated with the given scene and removes the scene from the SceneManager.</para>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
       </summary>
-      <param name="sceneBuildIndex">Index of the scene in the Build Settings to unload.</param>
-      <param name="sceneName">Name or path of the scene to unload.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to unload.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
       <param name="scene">Scene to unload.</param>
       <returns>
-        <para>Returns true if the scene is unloaded.</para>
+        <para>Returns true if the Scene is unloaded.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadScene(UnityEngine.SceneManagement.Scene)">
       <summary>
-        <para>Destroys all GameObjects associated with the given scene and removes the scene from the SceneManager.</para>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
       </summary>
-      <param name="sceneBuildIndex">Index of the scene in the Build Settings to unload.</param>
-      <param name="sceneName">Name or path of the scene to unload.</param>
+      <param name="sceneBuildIndex">Index of the Scene in the Build Settings to unload.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
       <param name="scene">Scene to unload.</param>
       <returns>
-        <para>Returns true if the scene is unloaded.</para>
+        <para>Returns true if the Scene is unloaded.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(System.Int32)">
       <summary>
-        <para>Destroys all GameObjects associated with the given scene and removes the scene from the SceneManager.</para>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
       </summary>
-      <param name="sceneBuildIndex">Index of the scene in BuildSettings.</param>
-      <param name="sceneName">Name or path of the scene to unload.</param>
+      <param name="sceneBuildIndex">Index of the Scene in BuildSettings.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
       <param name="scene">Scene to unload.</param>
       <returns>
         <para>Use the AsyncOperation to determine if the operation has completed.</para>
@@ -25270,10 +25295,10 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(System.String)">
       <summary>
-        <para>Destroys all GameObjects associated with the given scene and removes the scene from the SceneManager.</para>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
       </summary>
-      <param name="sceneBuildIndex">Index of the scene in BuildSettings.</param>
-      <param name="sceneName">Name or path of the scene to unload.</param>
+      <param name="sceneBuildIndex">Index of the Scene in BuildSettings.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
       <param name="scene">Scene to unload.</param>
       <returns>
         <para>Use the AsyncOperation to determine if the operation has completed.</para>
@@ -25281,10 +25306,10 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(UnityEngine.SceneManagement.Scene)">
       <summary>
-        <para>Destroys all GameObjects associated with the given scene and removes the scene from the SceneManager.</para>
+        <para>Destroys all GameObjects associated with the given Scene and removes the Scene from the SceneManager.</para>
       </summary>
-      <param name="sceneBuildIndex">Index of the scene in BuildSettings.</param>
-      <param name="sceneName">Name or path of the scene to unload.</param>
+      <param name="sceneBuildIndex">Index of the Scene in BuildSettings.</param>
+      <param name="sceneName">Name or path of the Scene to unload.</param>
       <param name="scene">Scene to unload.</param>
       <returns>
         <para>Use the AsyncOperation to determine if the operation has completed.</para>
@@ -25371,6 +25396,11 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
     <member name="P:UnityEngine.Screen.resolutions">
       <summary>
         <para>All fullscreen resolutions supported by the monitor (Read Only).</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Screen.safeArea">
+      <summary>
+        <para>Returns the safe area of the screen in pixels (Read Only).</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Screen.sleepTimeout">
@@ -26536,12 +26566,45 @@ Returns NULL if there is no associated alpha texture for the source sprite. This
       <param name="meshType">Controls the type of mesh generated for the sprite.</param>
       <param name="border">The border sizes of the sprite (X=left, Y=bottom, Z=right, W=top).</param>
     </member>
+    <member name="M:UnityEngine.Sprite.GetPhysicsShape">
+      <summary>
+        <para>Gets a physics shape from the Sprite by its index.</para>
+      </summary>
+      <param name="shapeIdx">The index of the physics shape to retrieve.</param>
+      <param name="physicsShape">An ordered list of the points in the selected physics shape to store points in.</param>
+      <returns>
+        <para>The number of points stored in the given list.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Sprite.GetPhysicsShapeCount">
+      <summary>
+        <para>The number of physics shapes for the Sprite.</para>
+      </summary>
+      <returns>
+        <para>The number of physics shapes for the Sprite.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Sprite.GetPhysicsShapePointCount(System.Int32)">
+      <summary>
+        <para>The number of points in the selected physics shape for the Sprite.</para>
+      </summary>
+      <param name="shapeIdx">The index of the physics shape to retrieve the number of points from.</param>
+      <returns>
+        <para>The number of points in the selected physics shape for the Sprite.</para>
+      </returns>
+    </member>
     <member name="M:UnityEngine.Sprite.OverrideGeometry(UnityEngine.Vector2[],System.UInt16[])">
       <summary>
         <para>Sets up new Sprite geometry.</para>
       </summary>
       <param name="vertices">Array of vertex positions in Sprite Rect space.</param>
       <param name="triangles">Array of sprite mesh triangle indices.</param>
+    </member>
+    <member name="M:UnityEngine.Sprite.OverridePhysicsShape(System.Collections.Generic.IList`1&lt;UnityEngine.Vector2[]&gt;)">
+      <summary>
+        <para>Sets up a new Sprite physics shape.</para>
+      </summary>
+      <param name="physicsShapes">A multidimensional list of points in Sprite.rect space denoting the physics shape outlines.</param>
     </member>
     <member name="T:UnityEngine.SpriteAlignment">
       <summary>
@@ -27063,6 +27126,11 @@ Returns NULL if there is no associated alpha texture for the source sprite. This
     <member name="P:UnityEngine.SystemInfo.supportsStencil">
       <summary>
         <para>Is the stencil buffer supported? (Read Only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.supportsTextureWrapMirrorOnce">
+      <summary>
+        <para>Returns true if the 'Mirror Once' texture wrap mode is supported. (Read Only)</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SystemInfo.supportsVibration">

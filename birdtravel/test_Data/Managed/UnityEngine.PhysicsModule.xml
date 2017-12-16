@@ -199,7 +199,7 @@
     </member>
     <member name="P:UnityEngine.Collider.enabled">
       <summary>
-        <para>Enabled Colliders will collide with other colliders, disabled Colliders won't.</para>
+        <para>Enabled Colliders will collide with other Colliders, disabled Colliders won't.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Collider.isTrigger">
@@ -260,7 +260,7 @@
     </member>
     <member name="P:UnityEngine.Collision.gameObject">
       <summary>
-        <para>The GameObject whose collider we are colliding with. (Read Only).</para>
+        <para>The GameObject whose collider you are colliding with. (Read Only).</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Collision.impulse">
@@ -634,7 +634,7 @@ Sometimes it is not possible to project (for example when the joints form a cycl
     </member>
     <member name="T:UnityEngine.ForceMode">
       <summary>
-        <para>Option for how to apply a force using Rigidbody.AddForce.</para>
+        <para>Use ForceMode to specify how to apply a force using Rigidbody.AddForce.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.ForceMode.Acceleration">

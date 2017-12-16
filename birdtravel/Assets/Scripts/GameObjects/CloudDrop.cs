@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CloudDrop : MonoBehaviour
 {
-	Vector3 playerPosition;
+//	Vector3 playerPosition;
 	public GameObject player;
-	int speed = 10;
-	void OnTriggerEnter2D(Collider2D other)
+	public int speed = 10;
+    private bool isDroping = false;
+    public float triggerOffset = 1f;
+    void OnTriggerEnter2D(Collider2D other)
 	{
 
 		player.transform.position = new Vector2(0, 2.63f);
@@ -15,21 +17,28 @@ public class CloudDrop : MonoBehaviour
 
 	}
 
-
-	// Use this for initialization
-	void Start()
+    private void Reset()
+    {
+        
+    }
+    // Use this for initialization
+    void Start()
 	{
-		playerPosition = new Vector3 (87, 5.7f); // abc : 여기에 오면 구름 추락
+
+//		playerPosition = new Vector3 (87, 5.7f); // abc : 여기에 오면 구름 추락
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (playerPosition.x >= player.transform.position.x && playerPosition.y >=player.transform.position.y) {
+     	if (isDroping) {
 
 			transform.Translate(Vector2.down * speed * Time.deltaTime);
 
-		}
+		}else if ((player.transform.position.x - transform.position.x <= triggerOffset)&&
+            (transform.position.x  - player.transform.position.x  <= triggerOffset )){
+            isDroping = true;
+        }
 	
 
 

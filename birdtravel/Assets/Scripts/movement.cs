@@ -27,8 +27,15 @@ public class movement : MonoBehaviour {
                 transform.position = new Vector2(0, 2.63f);
             }
             life -= 1;
-            reset = true;
-
+            reset = true;/*
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject gameObject : gameObjects){
+                gameObject.GetComponent<CloudDrop>
+                if (gameObject.GetType() == typeof(CloudDrop))
+                {
+                    ((CloudDrop)gameObject).Reset();
+                }
+            }*/
 
         }
 		animator.SetBool ("isjumping", false);
@@ -36,9 +43,11 @@ public class movement : MonoBehaviour {
         {
             other.enabled = false;
             GameManager.ClearStage();
+            
         }
     }
 
+    
 	// Use this for initialization
 	void Start () {
 		rigid = gameObject.GetComponent<Rigidbody2D> ();
@@ -51,10 +60,12 @@ public class movement : MonoBehaviour {
 			if (SavePointTrigger.Plag == true) { // abc : 세이브포인트가 on일시
 				transform.position = new Vector2 (100, 3); // abc : 플래그지점에서 재ㅇ성
 				life -= 1;
-				return;
+                GameManager.Reset();
+                return;
 			}
 			transform.position = new Vector2 (0, 3);
             life -= 1;
+            GameManager.Reset();
             reset = true;
 
 		}

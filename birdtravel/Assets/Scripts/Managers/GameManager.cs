@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour {
         if (stageLevel == 0) {
             Time.timeScale = 0f; //세상 : 처음 시작할 시에 움직이지 않는다.
 
+        }else
+        {
+            isStarted = true;
+            Time.timeScale = 1f;
         }
     }
 
@@ -100,7 +104,8 @@ public class GameManager : MonoBehaviour {
     }
     public static void ClearStage()
     {
-       //
+        //
+        Time.timeScale = 0f;
         stageLevel++;
         if (SavePointTrigger.Plag == true)
         {
@@ -108,13 +113,16 @@ public class GameManager : MonoBehaviour {
         }
         if (stageLevel == clearStageLevel) //클리어 성공
         {
-            Time.timeScale = 0f;
-
             isCleared = true;
         }else
         {
             SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
         }
+    }
+    public static void Reset()
+    {
+        SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
+
     }
     // Use this for initialization
     void Start () {
