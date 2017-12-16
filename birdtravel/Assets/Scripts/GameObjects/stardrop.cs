@@ -46,10 +46,6 @@ public class stardrop : MonoBehaviour
 
         }
 
-        if(movement.reset==true)
-        {
-            transform.position = new Vector2(transform.localPosition.x, 8);
-            movement.reset = false;
-        }
+       
     }
 }

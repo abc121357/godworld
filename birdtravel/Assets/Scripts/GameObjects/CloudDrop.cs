@@ -12,15 +12,10 @@ public class CloudDrop : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
 	{
 
-		player.transform.position = new Vector2(0, 2.63f);
-		movement.life -= 1; //abc:라이프감소
-
+        movement.Die();
+		
 	}
-
-    private void Reset()
-    {
-        
-    }
+    
     // Use this for initialization
     void Start()
 	{

@@ -10,6 +10,7 @@ TagManager:
   - Soda
   - ClearPoint
   - StartPoint
+  - SavePoint
   layers:
   - Default
   - TransparentFX

@@ -4,39 +4,25 @@ using UnityEngine;
 
 public class movement : MonoBehaviour {
 
-    static public bool reset = false; // 게임 오브젝트 리셋
-    static public float life = 3;
+    static public int life = 3;
 	public GameObject bird;
 	public float movepower = 1.0f;
 	public float jumppower = 1.0f;
 	Rigidbody2D rigid;
 	bool isjumping = false;
 	Animator animator;
-
-	void OnTriggerEnter2D(Collider2D other)
+    public static void Die()
+    {
+        life--;
+        GameManager.Reset();
+    }
+    void OnTriggerEnter2D(Collider2D other)
 	{
         if(other.gameObject.tag=="Enemy") // 게임태그가 적이면
         {
-            if (SavePointTrigger.Plag == true)
-            {
-                transform.position = new Vector2(100, 2.63f);
-            }
-
-            else
-            {
-                transform.position = new Vector2(0, 2.63f);
-            }
-            life -= 1;
-            reset = true;/*
-            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (GameObject gameObject : gameObjects){
-                gameObject.GetComponent<CloudDrop>
-                if (gameObject.GetType() == typeof(CloudDrop))
-                {
-                    ((CloudDrop)gameObject).Reset();
-                }
-            }*/
-
+          
+            Die();
+            
         }
 		animator.SetBool ("isjumping", false);
         if (other.gameObject.tag == "ClearPoint")
@@ -57,17 +43,8 @@ public class movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (transform.position.y < -4) {
-			if (SavePointTrigger.Plag == true) { // abc : 세이브포인트가 on일시
-				transform.position = new Vector2 (100, 3); // abc : 플래그지점에서 재ㅇ성
-				life -= 1;
-                GameManager.Reset();
-                return;
-			}
-			transform.position = new Vector2 (0, 3);
-            life -= 1;
-            GameManager.Reset();
-            reset = true;
-
+		    Die();
+            return;
 		}
 		if (Input.GetAxisRaw ("Horizontal") < 0) {
 			animator.SetInteger ("position", -1);

@@ -11,24 +11,36 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
     Vector3 startingPosition;
     Quaternion startingRotation;
+
+    Vector3 savedPosition;
+    Quaternion savedRotation;
     Vector3 clearPosition;
-    bool isStarted = false; //세상 : 시작했는지 확인하는 값
-    static bool isCleared = false; // 세상 : 끝났는지 확인하는 값
+
+    public static bool isStarted = false; //세상 : 시작했는지 확인하는 값
+    public static bool isCleared = false; // 세상 : 끝났는지 확인하는 값
+    public static bool isSaved = false; //세상 : 중간 저장했는지 확인하는 값
 
     static int stageLevel = 0;
 
     public const int clearStageLevel = 2; // 세상: 맨 끝 스테이지
     const string startPointTag = "StartPoint";
     const string clearPointTag = "ClearPoint";
+    const string savedPointTag = "SavePoint";
+    const string mainCameraTag = "MainCamera";
     private void Awake()
     {
-        if (stageLevel == 0) {
-            Time.timeScale = 0f; //세상 : 처음 시작할 시에 움직이지 않는다.
-
-        }else
+        Time.timeScale = 0f;
+        if (isStarted)
         {
-            isStarted = true;
-            Time.timeScale = 1f;
+            //세상 : 처음 시작할 시에 움직이지 않는다.
+            StartGame();
+            Debug.Log("스타트 게임");
+
+        }
+        else
+        {
+            Debug.Log("응 아니야");
+
         }
     }
 
@@ -80,6 +92,7 @@ public class GameManager : MonoBehaviour {
             GUILayout.Label("클리어를 축하드립니다. 다음 데모를 기대해 주세요 :)");
             if (GUILayout.Button("리플레이하기 ! "))
             {
+                isSaved = false;
                 isCleared = false;
                 stageLevel = 0;
                 SceneManager.LoadScene(0, LoadSceneMode.Single);
@@ -97,20 +110,31 @@ public class GameManager : MonoBehaviour {
     void StartGame()
     {
         Time.timeScale = 1f;
-        GameObject standingCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        standingCamera.SetActive(false);
-        startingPosition = new Vector3(startingPosition.x, startingPosition.y + 2f, startingPosition.z);
-        Instantiate(player, startingPosition, startingRotation);
+
+        GameObject standingCamera = GameObject.FindGameObjectWithTag(mainCameraTag);
+        if (standingCamera != null) {
+            standingCamera.SetActive(false);
+        }
+
+        if (!isSaved) {//세이브 했을 경우 세이브 포인트에서 시작
+            Instantiate(player, new Vector3(startingPosition.x, startingPosition.y + 2f, startingPosition.z), startingRotation);
+        }else{
+            Instantiate(player, new Vector3(savedPosition.x, savedPosition.y + 2f, savedPosition.z), savedRotation);
+
+        }
+
+    }
+    public static void SaveStage()
+    {
+        isSaved = true;
     }
     public static void ClearStage()
     {
         //
         Time.timeScale = 0f;
         stageLevel++;
-        if (SavePointTrigger.Plag == true)
-        {
-            SavePointTrigger.Plag = false;
-        }
+        isSaved = false; //담 스테이지로 가기 전에 세이브 하기
+
         if (stageLevel == clearStageLevel) //클리어 성공
         {
             isCleared = true;
@@ -122,13 +146,16 @@ public class GameManager : MonoBehaviour {
     public static void Reset()
     {
         SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
-
     }
     // Use this for initialization
     void Start () {
         startingPosition = GameObject.FindGameObjectWithTag(startPointTag).transform.position;
         startingRotation = GameObject.FindGameObjectWithTag(startPointTag).transform.rotation;
         clearPosition = GameObject.FindGameObjectWithTag(clearPointTag).transform.position;
+        savedPosition = GameObject.FindGameObjectWithTag(savedPointTag).transform.position;
+        savedRotation = GameObject.FindGameObjectWithTag(savedPointTag).transform.rotation;
+        
+        
     }
 	
 	// Update is called once per frame
