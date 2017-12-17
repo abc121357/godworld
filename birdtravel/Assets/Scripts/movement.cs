@@ -20,7 +20,7 @@ public class movement : MonoBehaviour {
 	{
         if(other.gameObject.tag=="Enemy") // 게임태그가 적이면
         {
-          
+            other.enabled = false;
             Die();
             
         }
