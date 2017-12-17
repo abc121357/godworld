@@ -11,9 +11,7 @@ public class CloudDrop : MonoBehaviour
     public float triggerOffset = 1f;
     void OnTriggerEnter2D(Collider2D other)
 	{
-
-        movement.Die();
-		
+        
 	}
     
     // Use this for initialization
