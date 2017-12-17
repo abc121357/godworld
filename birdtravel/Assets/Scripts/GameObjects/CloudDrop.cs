@@ -34,8 +34,8 @@ public class CloudDrop : MonoBehaviour
                 transform.Translate(Vector2.down * speed * Time.deltaTime);
 
             }
-            else if ((player.transform.position.x - transform.position.x <= triggerOffset) &&
-               (transform.position.x - player.transform.position.x <= triggerOffset))
+            else if (((player.transform.position.x+0.5) - transform.position.x <= triggerOffset) &&
+               ((transform.position.x+0.5) - player.transform.position.x <= triggerOffset))
             {
                 isDroping = true;
             }
