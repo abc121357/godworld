@@ -2,7 +2,23 @@ fileFormatVersion: 2
 guid: fb033f8f8e810164bb7e04be65071906
 timeCreated: 18446744011573954816
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: run1_front_0
+    21300002: run1_front_1
+    21300004: run1_front_2
+    21300006: run1_front_3
+    21300008: run1_left_0
+    21300010: run1_left_1
+    21300012: run1_left_2
+    21300014: run1_left_3
+    21300016: run1_right_0
+    21300018: run1_right_1
+    21300020: run1_right_2
+    21300022: run1_right_3
+    21300024: run1_back_0
+    21300026: run1_back_1
+    21300028: run1_back_2
+    21300030: run1_back_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -64,6 +80,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: iPhone
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -73,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:

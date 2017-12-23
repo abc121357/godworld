@@ -2,7 +2,11 @@ fileFormatVersion: 2
 guid: 2fb6c84519842714bbb612efb1c0b643
 timeCreated: 18446744011573954816
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: blink_0
+    21300002: blink_1
+    21300004: blink_2
+    21300006: blink_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -64,6 +68,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: iPhone
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -73,6 +78,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:

@@ -2,7 +2,11 @@ fileFormatVersion: 2
 guid: 03ed5588870d650478fc384298f2c81a
 timeCreated: 18446744011573954816
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: relax_0
+    21300002: relax_1
+    21300004: relax_2
+    21300006: relax_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -64,6 +68,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: iPhone
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -73,6 +78,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:

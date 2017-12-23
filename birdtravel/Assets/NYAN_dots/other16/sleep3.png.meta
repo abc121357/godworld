@@ -2,7 +2,11 @@ fileFormatVersion: 2
 guid: 3635bfa0378125242a6bc148703e4fdd
 timeCreated: 18446744011573954816
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: sleep3_0
+    21300002: sleep3_1
+    21300004: sleep3_2
+    21300006: sleep3_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -64,6 +68,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: iPhone
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -73,6 +78,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:

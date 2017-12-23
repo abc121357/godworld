@@ -26,7 +26,7 @@ namespace Remiix
 				BuildTarget.StandaloneLinuxUniversal
 			};
 			BuildTarget[] standaloneOSX = {
-				BuildTarget.StandaloneOSXIntel, BuildTarget.StandaloneOSXIntel64, BuildTarget.StandaloneOSXUniversal
+				BuildTarget.StandaloneOSXIntel, BuildTarget.StandaloneOSXIntel64, BuildTarget.StandaloneOSX
 			};
 
 			BuildTarget[] standaloneWindow = {
