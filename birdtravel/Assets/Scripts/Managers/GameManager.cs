@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
 
     static int stageLevel = 0;
 
-    public const int clearStageLevel = 2; // 세상: 맨 끝 스테이지
+    public const int clearStageLevel = 4; // 세상: 맨 끝 스테이지
     const string startPointTag = "StartPoint";
     const string clearPointTag = "ClearPoint";
     const string savedPointTag = "SavePoint";
@@ -81,6 +81,45 @@ public class GameManager : MonoBehaviour {
                 isStarted = true;
                 StartGame();
             }
+            GUILayout.FlexibleSpace();
+            GUILayout.EndVertical();
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            GUILayout.BeginVertical();
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("2단계로 워프"))
+            {
+                //
+                isStarted = true;
+                Time.timeScale = 1f;
+                stageLevel = 1;
+                isSaved = false; //담 스테이지로 가기 전에 세이브 하기
+                SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
+
+            }
+            GUILayout.FlexibleSpace();
+            GUILayout.EndVertical();
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            GUILayout.BeginVertical();
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("3단계로 워프"))
+            {
+                isStarted = true;
+                Time.timeScale = 1f;
+                stageLevel = 2;
+                isSaved = false; //담 스테이지로 가기 전에 세이브 하기
+                SceneManager.LoadScene(stageLevel, LoadSceneMode.Single);
+            }
+           
+
+
             GUILayout.FlexibleSpace();
             GUILayout.EndVertical();
             GUILayout.FlexibleSpace();
