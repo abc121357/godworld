@@ -111,6 +111,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -133,7 +134,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58988458762524824
 CircleCollider2D:
@@ -234,6 +235,9 @@ MonoBehaviour:
   bird: {fileID: 1754133919695472}
   movepower: 3
   jumppower: 8
+  rigid: {fileID: 0}
+  isjumping: 0
+  animator: {fileID: 0}
 --- !u!114 &114628539640543496
 MonoBehaviour:
   m_ObjectHideFlags: 1

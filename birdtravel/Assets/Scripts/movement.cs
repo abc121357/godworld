@@ -8,9 +8,9 @@ public class movement : MonoBehaviour {
 	public GameObject bird;
 	public float movepower = 1.0f;
 	public float jumppower = 1.0f;
-	Rigidbody2D rigid;
-	bool isjumping = false;
-	Animator animator;
+	public Rigidbody2D rigid;
+	public bool isjumping = false;
+	public Animator animator;
     public static void Die()
     {
         life--;
