@@ -7,7 +7,9 @@ public class RotatingBall : MonoBehaviour {
     public float pivotOffsetX = 0f;
     public float pivotOffsetY = 0f;
     private Vector3 pivot;
+    
     public GameObject player;
+
    // public GameObject Ball;
     // Use this for initialization
     
@@ -17,12 +19,11 @@ public class RotatingBall : MonoBehaviour {
         pivot.x = transform.position.x + pivotOffsetX;
         pivot.y = transform.position.y + pivotOffsetY;
         pivot.z = transform.position.z;
-
+        
     }
 
     // Update is called once per frame
     void Update (){
-        
         //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         
       //  transform.Rotate( Vector3.forward, Time.deltaTime * speed);
