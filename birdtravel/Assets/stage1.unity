@@ -3447,6 +3447,7 @@ GameObject:
   - component: {fileID: 295134704}
   - component: {fileID: 295134703}
   - component: {fileID: 295134705}
+  - component: {fileID: 295134706}
   m_Layer: 0
   m_Name: scene_03_pandulum
   m_TagString: Untagged
@@ -3506,7 +3507,7 @@ Transform:
   m_GameObject: {fileID: 295134702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.74175, y: 3.634426, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
@@ -3522,11 +3523,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d4a11b61b6a8047b8a4d47edac534d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 100
   pivotOffsetX: 0
   pivotOffsetY: 1
   rotatingOffset: 30
   player: {fileID: 0}
+--- !u!61 &295134706
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295134702}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.76, y: 1.08}
+    newSize: {x: 0.76, y: 1.08}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.25}
+  m_EdgeRadius: 0
 --- !u!1 &305414615
 GameObject:
   m_ObjectHideFlags: 0

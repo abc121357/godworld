@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bird: {fileID: 1754133919695472}
   movepower: 3
-  jumppower: 8
+  jumppower: 9
   rigid: {fileID: 0}
   isjumping: 0
   animator: {fileID: 0}

@@ -19,7 +19,7 @@ public class Pandulum : MonoBehaviour {
     void Start()
     {
         pivot = new Vector3();
-        pivot.x = transform.localposition.x + pivotOffsetX;
+        pivot.x = transform.position.x + pivotOffsetX;
         pivot.y = transform.position.y + pivotOffsetY;
         pivot.z = transform.position.z;
         
