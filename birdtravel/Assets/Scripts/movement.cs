@@ -11,6 +11,8 @@ public class movement : MonoBehaviour {
 	public Rigidbody2D rigid;
 	public bool isjumping = false;
 	public Animator animator;
+    private Transform m_currMovingPlatform;
+
     public static void Die()
     {
         life--;
@@ -31,11 +33,24 @@ public class movement : MonoBehaviour {
             GameManager.ClearStage();
             
         }
+        if (other.gameObject.tag == "MovingSurfaceCollider")
+        {
+            m_currMovingPlatform = other.gameObject.transform;
+            transform.SetParent(m_currMovingPlatform);
+        }
     }
-
-    
-	// Use this for initialization
-	void Start () {
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "MovingSurfaceCollider")
+        {
+          
+            m_currMovingPlatform = null;
+            transform.parent = null;
+        }
+    }
+   
+    // Use this for initialization
+    void Start () {
 		rigid = gameObject.GetComponent<Rigidbody2D> ();
 		animator = gameObject.GetComponentInChildren<Animator> ();
 	}

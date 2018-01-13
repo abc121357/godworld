@@ -32,13 +32,12 @@ public class Pandulum : MonoBehaviour {
        
         if (transform.eulerAngles.z > rotatingOffset && transform.eulerAngles.z < 180)
         {
-            Debug.Log(transform.eulerAngles.z);
+      
             direction = Vector3.back;
         }
         else if (transform.eulerAngles.z < 360-rotatingOffset && transform.eulerAngles.z > 180)
         {
 
-            Debug.Log(transform.eulerAngles.z);
             direction = Vector3.forward; 
         }
 

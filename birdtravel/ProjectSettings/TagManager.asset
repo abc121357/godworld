@@ -11,6 +11,7 @@ TagManager:
   - ClearPoint
   - StartPoint
   - SavePoint
+  - MovingSurfaceCollider
   layers:
   - Default
   - TransparentFX

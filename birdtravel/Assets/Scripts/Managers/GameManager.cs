@@ -45,8 +45,7 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            Debug.Log("응 아니야");
-
+          
         }
     }
 
