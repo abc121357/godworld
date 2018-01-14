@@ -31,16 +31,16 @@ public class MovingPlatform : MonoBehaviour {
     void Update()
     {
 
-        if (transform.localPosition.y < minPoint)
+        if (transform.position.y < minPoint)
         {
 
 
 
             direction = Vector2.up;
         }
-        else if (transform.localPosition.y > maxPoint)
+        else if (transform.position.y > maxPoint)
         {
-            transform.position = new Vector3(transform.localPosition.x, minPoint,transform.localPosition.z);
+            transform.position = new Vector3(transform.position.x, minPoint,transform.position.z);
 //            transform.position.y = minPoint;
             //direction = Vector2.down;
         }

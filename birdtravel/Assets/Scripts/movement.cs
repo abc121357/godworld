@@ -12,6 +12,9 @@ public class movement : MonoBehaviour {
 	public bool isjumping = false;
 	public Animator animator;
     private Transform m_currMovingPlatform;
+    private Vector3 velocity = Vector3.zero;
+    public float limitVelocity = 20.0f;
+    private Vector3 prevPos;
 
     public static void Die()
     {
@@ -60,7 +63,19 @@ public class movement : MonoBehaviour {
 		if (transform.position.y < -4) {
 		    Die();
             return;
-		}
+        }
+        Debug.Log(velocity.magnitude);
+
+        if (velocity.magnitude > limitVelocity && velocity.magnitude <100)
+            {
+               
+                velocity = Vector3.zero;
+                Die();
+                return;
+
+            }
+        
+        
 		if (Input.GetAxisRaw ("Horizontal") < 0) {
 			animator.SetInteger ("position", -1);
 		} else if (Input.GetAxisRaw ("Horizontal") > 0) {
@@ -82,11 +97,18 @@ public class movement : MonoBehaviour {
 	{
 		move ();
 		Jump ();
-	}
+        
+       
+        Vector3 diff = (transform.position - prevPos);
+        velocity = (transform.position - prevPos) / Time.deltaTime;
+
+        prevPos = transform.position;
+    }
 
 	void move()
 	{
 		Vector3 moveVelocity = Vector3.zero;
+
 
 		if (Input.GetAxisRaw ("Horizontal") < 0) {
 			moveVelocity = Vector3.left;
