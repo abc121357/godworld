@@ -35,8 +35,14 @@ public class MovingPlatform : MonoBehaviour {
         {
 
 
-
-            direction = Vector2.up;
+            if (minPoint<=maxPoint)
+            {
+                direction = Vector2.up;
+            }
+            else if (minPoint >= maxPoint)
+            {
+                direction = Vector2.down;
+            }
         }
         else if (transform.position.y > maxPoint)
         {
