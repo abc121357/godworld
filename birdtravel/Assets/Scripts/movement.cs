@@ -10,11 +10,12 @@ public class movement : MonoBehaviour {
 	public float jumppower = 1.0f;
 	public Rigidbody2D rigid;
 	public bool isjumping = false;
+    public bool canjumping = true;
 	public Animator animator;
     private Transform m_currMovingPlatform;
-    private Vector3 velocity = Vector3.zero;
+//    private Vector3 velocity = Vector3.zero;
     public float limitVelocity = 20.0f;
-    private Vector3 prevPos;
+  //  private Vector3 prevPos;
 
     public static void Die()
     {
@@ -41,6 +42,13 @@ public class movement : MonoBehaviour {
             m_currMovingPlatform = other.gameObject.transform;
             transform.SetParent(m_currMovingPlatform);
         }
+        if (other.gameObject.layer == 0 && rigid.velocity.y < 0)
+        {
+            canjumping = true;
+
+        }
+        Debug.Log("Attach : "+ other.gameObject.layer);
+    
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -50,8 +58,14 @@ public class movement : MonoBehaviour {
             m_currMovingPlatform = null;
             transform.parent = null;
         }
+        if (collision.gameObject.layer == 0 && rigid.velocity.y > 0)
+        {
+            canjumping = false;
+
+        }
+
     }
-   
+
     // Use this for initialization
     void Start () {
 		rigid = gameObject.GetComponent<Rigidbody2D> ();
@@ -64,12 +78,12 @@ public class movement : MonoBehaviour {
 		    Die();
             return;
         }
-        Debug.Log(velocity.magnitude);
-
-        if (velocity.magnitude > limitVelocity && velocity.magnitude <100)
+       // Debug.Log(velocity.magnitude);
+        
+        if (rigid.velocity.magnitude > limitVelocity && rigid.velocity.magnitude <100)
             {
                
-                velocity = Vector3.zero;
+                rigid.velocity = Vector3.zero;
                 Die();
                 return;
 
@@ -85,7 +99,7 @@ public class movement : MonoBehaviour {
 			animator.SetInteger("position",0);
 		}
 
-		if (Input.GetButtonDown ("Jump")&&!animator.GetBool("isjumping")) {
+		if (Input.GetButtonDown ("Jump")&&!animator.GetBool("isjumping") && canjumping) {
 			isjumping = true;
 			animator.SetBool ("isjumping",true);
 			animator.SetTrigger("dojumping");
@@ -99,10 +113,11 @@ public class movement : MonoBehaviour {
 		Jump ();
         
        
-        Vector3 diff = (transform.position - prevPos);
+/*        Vector3 diff = (transform.position - prevPos);
         velocity = (transform.position - prevPos) / Time.deltaTime;
 
         prevPos = transform.position;
+  */
     }
 
 	void move()

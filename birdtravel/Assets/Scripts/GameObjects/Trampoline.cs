@@ -9,19 +9,22 @@ public class Trampoline : MonoBehaviour {
     {
         {
             Rigidbody2D rigid = collision.GetComponent<Rigidbody2D>();
-            rigid.velocity = Vector2.zero;
+            
+            if ( rigid.velocity.y <= 0) {
+                rigid.velocity = Vector2.zero;
 
-            Vector2 jumpVelocity = new Vector2(0, jumpPower);
-            rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
+                Vector2 jumpVelocity = new Vector2(0, jumpPower);
+                rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
 
-            movement movement = collision.GetComponent<movement>();
-            if (movement != null)
-            {
+                movement movement = collision.GetComponent<movement>();
+                if (movement != null)
+                {
 
 
-                //movement.isjumping = true;
-                movement.animator.SetBool("isjumping", true);
-                movement.animator.SetTrigger("dojumping");
+                    movement.canjumping = true;
+                    movement.animator.SetBool("isjumping", true);
+                    movement.animator.SetTrigger("dojumping");
+                }
             }
         }
     }
