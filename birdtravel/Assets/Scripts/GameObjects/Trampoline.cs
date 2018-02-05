@@ -37,7 +37,7 @@ public class Trampoline : MonoBehaviour
             rainbowState++;
         }
 
-        spriteRenderer.sprite = orangeSprite;
+        spriteRenderer.sprite = redSprite;
         switch (rainbowState)
         {
             case (int)Color.Red:
