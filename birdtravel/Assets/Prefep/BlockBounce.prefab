@@ -123,7 +123,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ce7d6b837bba948ad3f8d1b849f4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redSprite: {fileID: 21300000, guid: 896c2395ff09f2f4fbeebf143f9b963b, type: 3}
+  orangeSprite: {fileID: 21300000, guid: 7b808e7bcfadfda4d99cf27d45548f95, type: 3}
+  yellowSprite: {fileID: 21300000, guid: 392f008ba2e109543a15d652ba28295e, type: 3}
+  greenSprite: {fileID: 21300000, guid: f238e6af25d679042a199ee83ffcf88e, type: 3}
+  blueSprite: {fileID: 21300000, guid: e436a6ec934e3b74a9f79440dd346742, type: 3}
+  indigoSprite: {fileID: 21300000, guid: bea1727394d6406448d439d46b52ba30, type: 3}
+  violetSprite: {fileID: 21300000, guid: 1257723bb9f7c114dba75ae21f28c234, type: 3}
   jumpPower: 10
+  rainbowState: 0
+  animator: {fileID: 0}
+  rigid: {fileID: 0}
 --- !u!212 &212420923740531518
 SpriteRenderer:
   m_ObjectHideFlags: 1
