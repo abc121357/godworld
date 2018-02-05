@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 95297751871693016}
   - component: {fileID: 61137460989476554}
   - component: {fileID: 61568967666979878}
+  - component: {fileID: 114865738132558364}
+  - component: {fileID: 251041909591079826}
   m_Layer: 0
   m_Name: BlockBounce
   m_TagString: Untagged
@@ -52,7 +54,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -76,9 +78,9 @@ BoxCollider2D:
   m_GameObject: {fileID: 1204928837069470}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 8208319be835a3242b6181b72bb68cc1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.4}
   m_SpriteTilingProperty:
@@ -110,6 +112,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114865738132558364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204928837069470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ce7d6b837bba948ad3f8d1b849f4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpPower: 10
 --- !u!212 &212420923740531518
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -154,3 +168,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!251 &251041909591079826
+PlatformEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204928837069470}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1

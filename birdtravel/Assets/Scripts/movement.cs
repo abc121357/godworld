@@ -43,7 +43,7 @@ public class movement : MonoBehaviour
             m_currMovingPlatform = other.gameObject.transform;
             transform.SetParent(m_currMovingPlatform);
         }
-        if (other.gameObject.layer == 0 && rigid.velocity.y < 0)
+        if (other.gameObject.layer == 8 && rigid.velocity.y <= 0)
         {
             canjumping = true;
 
@@ -59,7 +59,7 @@ public class movement : MonoBehaviour
             m_currMovingPlatform = null;
             transform.parent = null;
         }
-        if (collision.gameObject.layer == 0 && rigid.velocity.y > 0)
+        if (collision.gameObject.layer == 8 && rigid.velocity.y > 0)
         {
             canjumping = false;
 

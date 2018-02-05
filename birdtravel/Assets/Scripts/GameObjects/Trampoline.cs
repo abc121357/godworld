@@ -21,9 +21,7 @@ public class Trampoline : MonoBehaviour
                 movement movement = collision.GetComponent<movement>();
                 if (movement != null)
                 {
-
-
-                    movement.canjumping = true;
+                    movement.canjumping = false;
                     movement.animator.SetBool("isjumping", true);
                     movement.animator.SetTrigger("dojumping");
                 }
