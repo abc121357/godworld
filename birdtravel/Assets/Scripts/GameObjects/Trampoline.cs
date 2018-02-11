@@ -73,31 +73,31 @@ Debug.Log("hello");
         switch (rainbowState)
         {
             case (int)Color.Red:
-                spriteRenderer.sprite = redSprite;
+                //spriteRenderer.sprite = redSprite;
                 animator.runtimeAnimatorController = redController;
                 break;
             case (int)Color.Orange:
-                spriteRenderer.sprite = orangeSprite;
+                //spriteRenderer.sprite = orangeSprite;
                 animator.runtimeAnimatorController = orangeController;
                 break;
             case (int)Color.Yellow:
-                spriteRenderer.sprite = yellowSprite;
+                //spriteRenderer.sprite = yellowSprite;
                 animator.runtimeAnimatorController = yellowController;
                 break;
             case (int)Color.Green:
-                spriteRenderer.sprite = greenSprite;
+                //spriteRenderer.sprite = greenSprite;
                 animator.runtimeAnimatorController = greenController;
                 break;
             case (int)Color.Blue:
-                spriteRenderer.sprite = blueSprite;
+                //spriteRenderer.sprite = blueSprite;
                 animator.runtimeAnimatorController = blueController;
                 break;
             case (int)Color.Indigo:
-                spriteRenderer.sprite = indigoSprite;
+                //spriteRenderer.sprite = indigoSprite;
                 animator.runtimeAnimatorController = indigoController;
                 break;
             case (int)Color.Violet:
-                spriteRenderer.sprite = violetSprite;
+                //spriteRenderer.sprite = violetSprite;
                 animator.runtimeAnimatorController = violetController;
                 break;
             default:

@@ -48,7 +48,7 @@ public class movement : MonoBehaviour
             canjumping = true;
 
         }
-        Debug.Log("Attach : " + other.gameObject.layer);
+        // Debug.Log("Attach : " + other.gameObject.layer);
 
     }
     private void OnTriggerExit2D(Collider2D collision)

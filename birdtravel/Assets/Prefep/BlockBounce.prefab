@@ -132,11 +132,11 @@ MonoBehaviour:
   violetSprite: {fileID: 21300000, guid: 1257723bb9f7c114dba75ae21f28c234, type: 3}
   redController: {fileID: 9100000, guid: 80efdd19e3f8a2a4faf743e86768572f, type: 2}
   orangeController: {fileID: 9100000, guid: c7125d39e69d324489bd79b23ab75644, type: 2}
-  yellowController: {fileID: 0}
-  greenController: {fileID: 0}
-  blueController: {fileID: 0}
-  indigoController: {fileID: 0}
-  violetController: {fileID: 0}
+  yellowController: {fileID: 9100000, guid: f4e48ea2a981e7c469dfeea8a35d80d9, type: 2}
+  greenController: {fileID: 9100000, guid: 69a2ec82ff93e1445af738f5cd2617b1, type: 2}
+  blueController: {fileID: 9100000, guid: 1b64902eadaf5e54fba5cac2b1d08e59, type: 2}
+  indigoController: {fileID: 9100000, guid: d9f50971de92cbd42bbf2aaa58226876, type: 2}
+  violetController: {fileID: 9100000, guid: 8d547b484a03af84d83eaa54303a8b0c, type: 2}
   id: -1
   level: -1
   jumpPower: 10
