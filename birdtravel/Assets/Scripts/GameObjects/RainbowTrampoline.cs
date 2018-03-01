@@ -98,7 +98,7 @@ public class RainbowTrampoline : Trampoline {
         {
             if (CheckColorPuzzle())
             {
-                Debug.Log("hide!");
+                //Debug.Log("hide!");
                 BlockTrampoline.shouldShowTrampoline = false;
             }else
             {

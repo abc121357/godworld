@@ -9,7 +9,7 @@ public class Trampoline : MonoBehaviour
     {
 
     }
-    public float jumpPower = 20.0f;
+    public float jumpPower = 10.0f;
     protected Animator animator;
     protected SpriteRenderer spriteRenderer;
 
@@ -26,7 +26,7 @@ public class Trampoline : MonoBehaviour
    
     void OnTriggerEnter2D(Collider2D collision)
     {
-        {
+        
             Rigidbody2D rigid = collision.GetComponent<Rigidbody2D>();
 
             if (rigid.velocity.y <= 0)
@@ -45,7 +45,7 @@ public class Trampoline : MonoBehaviour
                     movement.animator.SetTrigger("dojumping");
                 }
             }
-        }
+        
     }
 
     // Update is called once per frame
