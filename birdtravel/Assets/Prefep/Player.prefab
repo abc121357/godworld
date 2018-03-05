@@ -237,7 +237,9 @@ MonoBehaviour:
   jumppower: 8.5
   rigid: {fileID: 0}
   isjumping: 0
+  canjumping: 1
   animator: {fileID: 0}
+  limitVelocity: 20
 --- !u!114 &114628539640543496
 MonoBehaviour:
   m_ObjectHideFlags: 1
